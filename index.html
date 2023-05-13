@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Generador de imágenes aleatorias</title>
+</head>
+<body>
+	<h1>Generador de imágenes aleatorias</h1>
+	<canvas id="canvas" width="400" height="400"></canvas>
+	<script>
+		// Obtener el elemento del canvas
+		var canvas = document.getElementById("canvas");
+		var ctx = canvas.getContext("2d");
+
+		// Iterar a través de cada píxel del canvas
+		for (var x = 0; x < canvas.width; x++) {
+			for (var y = 0; y < canvas.height; y++) {
+				// Generar un color aleatorio en formato RGB
+				var r = Math.floor(Math.random() * 256);
+				var g = Math.floor(Math.random() * 256);
+				var b = Math.floor(Math.random() * 256);
+				var color = "rgb(" + r + "," + g + "," + b + ")";
+
+				// Establecer el color del píxel actual
+				ctx.fillStyle = color;
+				ctx.fillRect(x, y, 1, 1);
+			}
+		}
+	</script>
+</body>
+</html>
